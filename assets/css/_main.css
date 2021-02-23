@@ -1,0 +1,112 @@
+body{
+    background-color: #009688;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 500px;
+    height: 400px;
+    background-color: transparent;
+    overflow: hidden;
+    border-bottom: 2px solid #fff;
+    position: relative;
+}
+.car, .wheel{
+    position: absolute;
+    bottom: -8.5px;
+    left: 50%;
+    z-index: 10;
+    animation: car 4s 0.080s ease infinite;
+}
+
+.tree{
+    position: absolute;
+    bottom: -9px;
+    animation: tree 10s 0.000s linear infinite;
+    z-index: 2;
+}
+.mountain{
+    position: absolute;
+    bottom: -10px;
+    right: -900px;
+    box-shadow: 0px 0px 0 50px #4db6ac
+    ,60px 50px 0 70px #4db6ac
+    ,90px 90px 0 50px #4db6ac
+    ,250px 250px 0 50px #4db6ac
+    ,290px 320px 0 50px #4db6ac
+    ,320px 400px 0 50px #4db6ac;
+    transform: rotate(130deg);
+    width: 2px;
+    height: 2px;
+    animation: mountain 10s linear infinite;
+}
+
+.hill{
+    position: absolute;
+    bottom: -50px;
+    right: -900px;
+    height: 20px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 50px #4db6ac
+    ,-20px 0 0 20px #4db6ac
+    ,-90px 0 0 50px #4db6ac
+    ,250px 0 0 50px #4db6ac
+    ,290px 0 0 50px #4db6ac
+    ,620px 0 0 50px #4db6ac;
+
+    animation: hill 10s 2s linear infinite;
+}
+.rock{
+    position: absolute;
+    right: 100%;
+    height: 5px;
+    width: 5px;
+    border-radius: 20%;
+    bottom: -2px;
+    background: #fff;
+    animation: rock 4s -0.530s linear infinite;
+}
+.car::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    box-shadow: -30px 25px 0 1.5px #fff,
+    -40px 18px 0 1.5px #fff;
+    animation: wind 1.5s 0s ease infinite;
+}
+@keyframes tree{
+  0%{transform: translateX(1350px);}
+  100%{transform: translateX(-50px);}
+}
+@keyframes rock {
+    /*0%{transform: translateX(2750px);}
+    100%{transform: translateX(-50px);}*/
+
+     0%{right: -310px;}
+    100%{right: 2000px;}
+}
+
+@keyframes car{
+    6%{transform: translateY(0px);}
+    7%{transform: translateY(-6px);}
+    9%{transform: translateY(0px);}
+    10%{transform: translateY(-1px);}
+    11%{transform: translateY(0px);}
+}
+@keyframes wind{
+    50%{transform: translateY(3px);}
+}
+@keyframes mountain{
+    100%{
+        transform: translateX(-2000px) rotate(130deg);
+    }
+}
+@keyframes hill{
+    100%{
+        transform: translateX(-2000px);
+    }
+}
